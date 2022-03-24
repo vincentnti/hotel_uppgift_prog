@@ -1,11 +1,6 @@
 namespace hotel {
-    class Manager {
-        public string Name {get; set;}
-        public int Id {get; set;}
-
+    class Manager : Person{
         public string PhoneNu {get; set;}
-
-        public string Location {get; set;}
 
         public Manager (
             string aName,
@@ -16,7 +11,6 @@ namespace hotel {
             this.Name = aName;
             this.Id = aId;
             this.PhoneNu = aPhoneNu;
-            this.Location = aLocation;
         }
 
     }

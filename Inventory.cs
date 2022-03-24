@@ -7,7 +7,6 @@ namespace hotel {
 
         public int Status {get; set;}
 
-
         public Inventory (
             string aType,
             int aStatus

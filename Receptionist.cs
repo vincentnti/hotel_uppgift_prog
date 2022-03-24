@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace hotel {
     class Receptionist {
@@ -8,38 +10,59 @@ namespace hotel {
 
         public string PhoneNu {get; set;}
         
-        public string Location {get; set;}
-
-        /*
-        public list<Room> = new list<Room>(){
-            //ADD ROOMS TO A LIST FOR ITERATION TO CHECK AVAILABILITY
-        }; 
-        */
+        public List<Room> Rooms {get; set;} = new List<Room>();
 
         public Receptionist (
             string aName,
             int aId,
-            string aPhoneNu,
-            string aLocation
+            string aPhoneNu
         ) {
             this.Name = aName;
             this.Id = aId;
             this.PhoneNu = aPhoneNu;
-            this.Location = aLocation;
+
+            // Generate 10 rooms
+            for (int i = 0; i < 11; i++) {
+                this.Rooms.Add(new Room(
+                    i,
+                    true
+                ));
+            }
         }
 
-    /*
-        public Room BookRoom(Guest aGuest) {
-            this.CheckRoomAvailability()
-            // Get room number here
-            //Rooms.Equals???
-            //aGuest.RoomNu = 1;
-            //Room aRoom = new Room(1, );
+        public void BookRoom(Guest aGuest) {
+            Room room = this.GetAvailabeRoom();
+            if (room != null) {
+                aGuest.StayingRoom = room;
+                room.RoomAvailable = false;
+            } else {
+                Console.WriteLine("Sorry " + aGuest.Name + " there are no available rooms.");
+            }
         }
-        */
 
-        public void CheckRoomAvailability() {
+        public void WriteBill(Guest aGuest) {
+            Console.WriteLine("Bill written!");
+            bool paidBill = aGuest.PayBill(2500);
+            if (!paidBill) {
+                // Text här
+                Console.WriteLine(aGuest.StayingRoom);
+                this.CancelRoom(aGuest);
+            }
+        }
 
+        public Room GetAvailabeRoom() {
+            // Find available room and return it
+            // No room found? Send null.
+           return this.Rooms.FirstOrDefault(room => room.RoomAvailable == true);
+        }
+
+        public void CancelRoom(Guest aGuest) {
+            if (aGuest.StayingRoom != null) {
+                Room room = aGuest.StayingRoom;
+                aGuest.StayingRoom = null;
+                room.RoomAvailable = true;
+                Console.WriteLine(aGuest.Name + " checked out! :(");
+            }
         }
     }
 }

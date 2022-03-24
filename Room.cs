@@ -1,14 +1,16 @@
 namespace hotel {
     class Room {
         public int RoomNu {get; set;}
-        public string Location {get; set;}
+
+        public bool RoomAvailable {get; set;} = true;
 
         public Room (
             int aRoomNu,
-            string aLocation
+            bool aRoomAvailable
+           
         ) {
             this.RoomNu = aRoomNu;
-            this.Location = aLocation;
+            this.RoomAvailable = aRoomAvailable;
         }
     }
 }

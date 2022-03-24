@@ -1,21 +1,12 @@
 namespace hotel {
 
-    class Cleaners {
-        public string Name {get; set;}
-
-        public int Id {get; set;}
-
-        public string Location {get; set;}
-
+    class Cleaners : Person {
         public Cleaners (
             string aName,
-            int aId,
-            string aLocation
-            
+            int aId
         ) {
             this.Name = aName;
             this.Id = aId;
-            this.Location = aLocation;
             
         }
     }

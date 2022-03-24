@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vincent.sinclair\\Documents\\GitHub\\vscode c# uppgifter\\hotel\\hotel.csproj": {}
+    "C:\\Users\\vincent.sinclair\\Documents\\GitHub\\vscode c# uppgifter\\hotel\\hotel_uppgift_prog\\hotel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vincent.sinclair\\Documents\\GitHub\\vscode c# uppgifter\\hotel\\hotel.csproj": {
+    "C:\\Users\\vincent.sinclair\\Documents\\GitHub\\vscode c# uppgifter\\hotel\\hotel_uppgift_prog\\hotel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vincent.sinclair\\Documents\\GitHub\\vscode c# uppgifter\\hotel\\hotel.csproj",
+        "projectUniqueName": "C:\\Users\\vincent.sinclair\\Documents\\GitHub\\vscode c# uppgifter\\hotel\\hotel_uppgift_prog\\hotel.csproj",
         "projectName": "hotel",
-        "projectPath": "C:\\Users\\vincent.sinclair\\Documents\\GitHub\\vscode c# uppgifter\\hotel\\hotel.csproj",
+        "projectPath": "C:\\Users\\vincent.sinclair\\Documents\\GitHub\\vscode c# uppgifter\\hotel\\hotel_uppgift_prog\\hotel.csproj",
         "packagesPath": "C:\\Users\\vincent.sinclair\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vincent.sinclair\\Documents\\GitHub\\vscode c# uppgifter\\hotel\\obj\\",
+        "outputPath": "C:\\Users\\vincent.sinclair\\Documents\\GitHub\\vscode c# uppgifter\\hotel\\hotel_uppgift_prog\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vincent.sinclair\\AppData\\Roaming\\NuGet\\NuGet.Config",
