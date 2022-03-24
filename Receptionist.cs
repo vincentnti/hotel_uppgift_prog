@@ -30,7 +30,7 @@ namespace hotel {
             }
         }
 
-        public void BookRoom(Guest aGuest) {
+        public void BookRoom(Guest aGuest) { // Sets the staying room for a guest by using GetAvailableRoom
             Room room = this.GetAvailabeRoom();
             if (room != null) {
                 aGuest.StayingRoom = room;
@@ -41,10 +41,9 @@ namespace hotel {
         }
 
         public void WriteBill(Guest aGuest) {
-            Console.WriteLine("Bill written!");
+            Console.WriteLine(this.Name + " writes a bill of 2500");
             bool paidBill = aGuest.PayBill(2500);
             if (!paidBill) {
-                // Text här
                 Console.WriteLine(aGuest.StayingRoom);
                 this.CancelRoom(aGuest);
             }
@@ -55,7 +54,7 @@ namespace hotel {
             // No room found? Send null.
            return this.Rooms.FirstOrDefault(room => room.RoomAvailable == true);
         }
-
+        
         public void CancelRoom(Guest aGuest) {
             if (aGuest.StayingRoom != null) {
                 Room room = aGuest.StayingRoom;

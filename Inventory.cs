@@ -2,7 +2,7 @@ using System;
 
 namespace hotel {
 
-     class Inventory {
+     class Inventory { // not used for anything, could be expanded upon
         public string Type {get; set;}
 
         public int Status {get; set;}

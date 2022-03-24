@@ -20,25 +20,20 @@ namespace hotel {
             this.PhoneNu = aPhoneNu;
             this.StayingRoom = aStayingRoom;
 
-
             Random rnd = new Random();
             this.Balance = rnd.Next(0, 20000); // 2500 blir pris för rum
-            
         }
 
-        // Methods
-        public void CheckIn(Receptionist aReceptionist) {
+        public void CheckIn(Receptionist aReceptionist) { 
             aReceptionist.BookRoom(this);
             Console.WriteLine(this.Name + " checked in! :) into Room " + this.StayingRoom.RoomNu);
-            // Något om bill går till receptionist som sedan
-            // Eller inte här kanske har ju metod nedan
         }
 
         public void CheckOut (Receptionist aReceptionist) {
             aReceptionist.CancelRoom(this);
         }
         
-        public bool PayBill(int aBill){ // Någon error, när man får för låg balance antar jag iaf vet inte ifall det är här
+        public bool PayBill(int aBill) { // Remove balance requested by Receptionist from guest.
             if (this.Balance >= aBill) {
                 this.Balance -= aBill;
                 Console.WriteLine(this.Name + " paid the bill! ;)");
@@ -48,7 +43,7 @@ namespace hotel {
             }
         }
         
-        public void OrderFood() {
+        public void OrderFood() { // For now just removes balance.
             if (this.Balance >= 100) {
                 this.Balance -= 100;
                 Console.WriteLine(this.Name + " ordered food!");
@@ -56,8 +51,5 @@ namespace hotel {
                 Console.WriteLine(this.Name + " could not afford food! ;(");
             }
         }
-
-
-        
     }
 }

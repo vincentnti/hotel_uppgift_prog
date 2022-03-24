@@ -5,9 +5,9 @@ namespace hotel
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args) // Program Entry
         {
-           var program = new Program(); // Program Entry
+           var program = new Program(); 
         }
         public List<Guest> Guests {get; set;} = new List<Guest>();
 
@@ -33,12 +33,12 @@ namespace hotel
 
         public void CommandLine() { // Command Line interface for actions, simplifies the process, simply check for commands and call the methods accordingly
             while(true) {
-                Console.WriteLine("Welcome to the Hotel System CLI! Type \"help\" for help");
+                Console.WriteLine("\nWelcome to the Hotel System CLI! Type \"help\" for help");
                 string command = Console.ReadLine(); // Command input!
                 if (command == "help") {
+                    // Prints available commands
                     Console.WriteLine("Available commands:");
                     Console.WriteLine("create, select, do, quit");
-                    // Prints available commands
                 } else if (command == "create") {
                     CreateGuest();
                 } else if (command == "select") {
@@ -49,13 +49,12 @@ namespace hotel
                     break; // escapes infinite loop 
                 } else {
                     Console.WriteLine("Command not recognized!");
-                    // Error handling and tips could be added here for user convenience;
+                    // Tips could be added here for user convenience;
                 }
             }
         }
 
-        public void CreateGuest() { 
-            // Type conversions required
+        public void CreateGuest() { // User interface for creating a new guest
             Console.WriteLine("Name: ");
             string name = Console.ReadLine();
             Console.WriteLine("Id: ");
@@ -90,9 +89,14 @@ namespace hotel
             }
         }
 
-        public void MethodGuest() { // check if chosenguest has something in it!!!!
+        public void MethodGuest() { // Command line interface for guest actions, simply checks for actions and calls methods accordingly 
+            if(this.chosenGuest == null) { // Prevent use when no guest is chosen. 
+                Console.WriteLine("Please select a guest first!");
+                return;
+            }
+
             while(true) {
-                Console.WriteLine("Write an action you want a Guest to perform!");
+                Console.WriteLine("\nWrite an action you want a Guest to perform!");
                 Console.WriteLine("Type \"actions\" for available actions, and quit to stop.");
                 string command = Console.ReadLine();
 

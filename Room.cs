@@ -4,7 +4,7 @@ namespace hotel {
 
         public bool RoomAvailable {get; set;} = true;
 
-        public Room (
+        public Room ( 
             int aRoomNu,
             bool aRoomAvailable
            

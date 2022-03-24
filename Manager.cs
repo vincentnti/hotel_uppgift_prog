@@ -1,5 +1,5 @@
 namespace hotel {
-    class Manager : Person{
+    class Manager : Person{ // Not used for anything at the moment, could be used to expand the scope of the project in the future.
         public string PhoneNu {get; set;}
 
         public Manager (
